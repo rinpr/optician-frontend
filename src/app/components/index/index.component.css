@@ -10,7 +10,7 @@
     mat-card {
         margin: 1rem;
         background-color: bisque;
-        width: 20vw;
+        width: 30vw;
         padding: 1.5 rem;
 
         .bill_id {
@@ -19,9 +19,12 @@
         .description {
             margin-left: 25px;
 
-            .header {
-                margin-bottom: 30px;
+            .head {
+                margin: 30px;
             }
+        }
+        .prescription-table {
+            margin: 5px;
         }
     }
 }

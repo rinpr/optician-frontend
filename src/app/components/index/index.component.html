@@ -1,15 +1,15 @@
 <h1>Fetching Data from backend</h1>
 
-<div class="cards-wrapper">
+<!-- <div class="cards-wrapper">
     @for (bill of bills; track bill.id) {
     <mat-card>
         <b class="bill_id">ID: {{ bill.id }}</b>
         <div class="description">
-            <b class="header">Customer Data</b>
+            <b class="head">Customer Data</b>
             <p>Name: {{ bill.customersbill.firstName }} {{ bill.customersbill.lastName }}</p>
             <p>Age: {{ bill.customersbill.age }}</p>
             <p>Gender: {{ bill.customersbill.gender }}</p>
-            <b class="header">Right Eye Prescription</b>
+            <b class="head">Right Eye Prescription</b>
             <p>Sphere: {{ bill.spectacle_prescription.right_eye.sphere }}</p>
             <p>Cylinder: {{ bill.spectacle_prescription.right_eye.cylinder }}</p>
             <p>Axis: {{ bill.spectacle_prescription.right_eye.axis }}</p>
@@ -19,7 +19,7 @@
             <p>DPD: {{ bill.spectacle_prescription.right_eye.dpd }}</p>
             <p>NPD: {{ bill.spectacle_prescription.right_eye.npd }}</p>
             <p>FH: {{ bill.spectacle_prescription.right_eye.fh }}</p>
-            <b class="header">Left Eye Prescription</b>
+            <b class="head">Left Eye Prescription</b>
             <p>Sphere: {{ bill.spectacle_prescription.left_eye.sphere }}</p>
             <p>Cylinder: {{ bill.spectacle_prescription.left_eye.cylinder }}</p>
             <p>Axis: {{ bill.spectacle_prescription.left_eye.axis }}</p>
@@ -32,4 +32,63 @@
         </div>
     </mat-card>
     }
-</div>
+</div> -->
+
+<div class="cards-wrapper">
+    @for (bill of bills; track bill.id) {
+      <mat-card>
+        <b class="bill_id">ID: {{ bill.id }}</b>
+        <div class="description">
+          <p>Name: {{ bill.customersbill.firstName }} {{ bill.customersbill.lastName }}</p>
+          <p>Age: {{ bill.customersbill.age }}</p>
+          <p>Gender: {{ bill.customersbill.gender }}</p>
+          
+          <!-- Display spectacle prescription in a table -->
+          <b>Spectacle Prescription</b>
+          <table class="prescription-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Sphere</th>
+                <th>Cylinder</th>
+                <th>Axis</th>
+                <th>Prism</th>
+                <th>Add</th>
+                <th>Mono VA</th>
+                <th>DPD</th>
+                <th>NPD</th>
+                <th>FH</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OD (R)</td>
+                <td>{{ bill.spectacle_prescription.right_eye.sphere }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.cylinder }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.axis }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.prism }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.add }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.mono_va }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.dpd }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.npd }}</td>
+                <td>{{ bill.spectacle_prescription.right_eye.fh }}</td>
+              </tr>
+              <tr>
+                <td>OS (L)</td>
+                <td>{{ bill.spectacle_prescription.left_eye.sphere }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.cylinder }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.axis }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.prism }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.add }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.mono_va }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.dpd }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.npd }}</td>
+                <td>{{ bill.spectacle_prescription.left_eye.fh }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </mat-card>
+    }
+  </div>
+  

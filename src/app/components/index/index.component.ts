@@ -1,6 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card';
+import { ApiService } from "../../services/api.service";
+import { Bill } from "../../models/bill";
 
 @Component({
     selector: 'app-index',
@@ -10,6 +12,15 @@ import { MatCardModule } from '@angular/material/card'
     imports: [MatCardModule]
 })
 
-export class IndexComponent {
+export class IndexComponent implements OnInit{
+    apiService  = inject(ApiService)
+    bills: Bill[] = []
+
+    ngOnInit(): void {
+        this.apiService.getBills().subscribe((bill) => {
+            this.bills = bill
+        })
+        console.log(this.bills)
+    }
     
 }

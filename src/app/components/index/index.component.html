@@ -1,3 +1,35 @@
-<div>
-    <h1>Fetching Data from backend</h1>
+<h1>Fetching Data from backend</h1>
+
+<div class="cards-wrapper">
+    @for (bill of bills; track bill.id) {
+    <mat-card>
+        <b class="bill_id">ID: {{ bill.id }}</b>
+        <div class="description">
+            <b class="header">Customer Data</b>
+            <p>Name: {{ bill.customersbill.firstName }} {{ bill.customersbill.lastName }}</p>
+            <p>Age: {{ bill.customersbill.age }}</p>
+            <p>Gender: {{ bill.customersbill.gender }}</p>
+            <b class="header">Right Eye Prescription</b>
+            <p>Sphere: {{ bill.spectacle_prescription.right_eye.sphere }}</p>
+            <p>Cylinder: {{ bill.spectacle_prescription.right_eye.cylinder }}</p>
+            <p>Axis: {{ bill.spectacle_prescription.right_eye.axis }}</p>
+            <p>Prism: {{ bill.spectacle_prescription.right_eye.prism }}</p>
+            <p>Add: {{ bill.spectacle_prescription.right_eye.add }}</p>
+            <p>Mono VA: {{ bill.spectacle_prescription.right_eye.mono_va }}</p>
+            <p>DPD: {{ bill.spectacle_prescription.right_eye.dpd }}</p>
+            <p>NPD: {{ bill.spectacle_prescription.right_eye.npd }}</p>
+            <p>FH: {{ bill.spectacle_prescription.right_eye.fh }}</p>
+            <b class="header">Left Eye Prescription</b>
+            <p>Sphere: {{ bill.spectacle_prescription.left_eye.sphere }}</p>
+            <p>Cylinder: {{ bill.spectacle_prescription.left_eye.cylinder }}</p>
+            <p>Axis: {{ bill.spectacle_prescription.left_eye.axis }}</p>
+            <p>Prism: {{ bill.spectacle_prescription.left_eye.prism }}</p>
+            <p>Add: {{ bill.spectacle_prescription.left_eye.add }}</p>
+            <p>Mono VA: {{ bill.spectacle_prescription.left_eye.mono_va }}</p>
+            <p>DPD: {{ bill.spectacle_prescription.left_eye.dpd }}</p>
+            <p>NPD: {{ bill.spectacle_prescription.left_eye.npd }}</p>
+            <p>FH: {{ bill.spectacle_prescription.left_eye.fh }}</p>
+        </div>
+    </mat-card>
+    }
 </div>

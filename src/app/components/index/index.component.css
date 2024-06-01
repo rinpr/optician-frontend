@@ -1,0 +1,27 @@
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    padding-bottom: 4rem;
+    margin: 2rem auto 4rem;
+
+    mat-card {
+        margin: 1rem;
+        background-color: bisque;
+        width: 20vw;
+        padding: 1.5 rem;
+
+        .bill_id {
+            margin: 15px;
+        }
+        .description {
+            margin-left: 25px;
+
+            .header {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

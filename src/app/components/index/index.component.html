@@ -36,59 +36,63 @@
 
 <div class="cards-wrapper">
     @for (bill of bills; track bill.id) {
-      <mat-card>
-        <b class="bill_id">ID: {{ bill.id }}</b>
-        <div class="description">
-          <p>Name: {{ bill.customersbill.firstName }} {{ bill.customersbill.lastName }}</p>
-          <p>Age: {{ bill.customersbill.age }}</p>
-          <p>Gender: {{ bill.customersbill.gender }}</p>
-          
-          <!-- Display spectacle prescription in a table -->
-          <b>Spectacle Prescription</b>
-          <table class="prescription-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Sphere</th>
-                <th>Cylinder</th>
-                <th>Axis</th>
-                <th>Prism</th>
-                <th>Add</th>
-                <th>Mono VA</th>
-                <th>DPD</th>
-                <th>NPD</th>
-                <th>FH</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>OD (R)</td>
-                <td>{{ bill.spectacle_prescription.right_eye.sphere }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.cylinder }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.axis }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.prism }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.add }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.mono_va }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.dpd }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.npd }}</td>
-                <td>{{ bill.spectacle_prescription.right_eye.fh }}</td>
-              </tr>
-              <tr>
-                <td>OS (L)</td>
-                <td>{{ bill.spectacle_prescription.left_eye.sphere }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.cylinder }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.axis }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.prism }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.add }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.mono_va }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.dpd }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.npd }}</td>
-                <td>{{ bill.spectacle_prescription.left_eye.fh }}</td>
-              </tr>
-            </tbody>
-          </table>
+    <mat-card>
+        <div class="bill_id">
+            <b>ID: {{ bill.id }}</b>
+            <b style="margin-left: 20px;">Date: {{ bill.date }}</b>
         </div>
-      </mat-card>
+
+        <div class="description">
+
+            <p>Name: {{ bill.customersbill.firstName }} {{ bill.customersbill.lastName }}</p>
+            <p>Age: {{ bill.customersbill.age }}</p>
+            <p>Gender: {{ bill.customersbill.gender }}</p>
+
+            <!-- Display spectacle prescription in a table -->
+            <b style="margin-left: 8px;">Spectacle Prescription</b>
+            <table class="prescription-table">
+                <thead>
+                    <tr class="prescription-data">
+                        <th></th>
+                        <th>Sphere</th>
+                        <th>Cylinder</th>
+                        <th>Axis</th>
+                        <th>Prism</th>
+                        <th>Add</th>
+                        <th>Mono-VA</th>
+                        <th>DPD</th>
+                        <th>NPD</th>
+                        <th>FH</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>OD (R)</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.sphere }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.cylinder }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.axis }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.prism }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.add }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.mono_va }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.dpd }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.npd }}</td>
+                        <td>{{ bill.spectacle_prescription.right_eye.fh }}</td>
+                    </tr>
+                    <tr>
+                        <td>OS (L)</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.sphere }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.cylinder }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.axis }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.prism }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.add }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.mono_va }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.dpd }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.npd }}</td>
+                        <td>{{ bill.spectacle_prescription.left_eye.fh }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card>
     }
-  </div>
-  
+</div>
